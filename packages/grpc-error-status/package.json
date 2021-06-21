@@ -1,0 +1,28 @@
+{
+  "name": "@atls/grpc-error-status",
+  "version": "0.0.0",
+  "license": "BSD-3-Clause",
+  "main": "src/index.ts",
+  "files": [
+    "proto",
+    "dist"
+  ],
+  "scripts": {
+    "proto:generate": "PATH=$PATH:$(yarn bin protoc-gen-ts) buf generate",
+    "proto:lint": "buf lint",
+    "build": "yarn app library build",
+    "postpack": "rm -rf dist",
+    "prepack": "yarn run build"
+  },
+  "dependencies": {
+    "google-protobuf": "^3.17.0",
+    "grpc": "^1.24.7"
+  },
+  "devDependencies": {
+    "grpc_tools_node_protoc_ts": "^5.1.1"
+  },
+  "publishConfig": {
+    "main": "dist/index.js",
+    "typings": "dist/index.d.ts"
+  }
+}

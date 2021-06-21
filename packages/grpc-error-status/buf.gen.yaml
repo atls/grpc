@@ -1,0 +1,9 @@
+version: v1beta1
+
+plugins:
+  - name: js
+    out: proto
+    opt: import_style=commonjs,binary
+  - name: ts
+    out: proto
+    opt: ts_out=proto

@@ -24,13 +24,6 @@ jobs:
 
       - name: Install
         run: yarn install
-        env:
-          GITHUB_TOKEN: '${{ secrets.GITHUB_TOKEN }}'
-
-      - name: Changes
-        run: yarn files changed list
-        env:
-          GITHUB_TOKEN: '${{ secrets.GITHUB_TOKEN }}'
 
       - name: Version
         run: yarn workspaces changed foreach --no-private --verbose version patch --deferred
