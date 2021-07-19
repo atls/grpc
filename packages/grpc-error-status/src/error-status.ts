@@ -1,7 +1,7 @@
 import { Any }                           from 'google-protobuf/google/protobuf/any_pb'
 import { Message }                       from 'google-protobuf'
-import { Metadata }                      from 'grpc'
-import { ServiceError }                  from 'grpc'
+import { Metadata }                      from '@grpc/grpc-js'
+import { ServiceError }                  from '@grpc/grpc-js'
 
 import { Status }                        from '../proto/google/rpc/status_pb'
 import { Code }                          from '../proto/google/rpc/code_pb'
@@ -34,6 +34,7 @@ export class ErrorStatus<T extends Message> {
       name: 'ServiceError',
       code: this.code,
       message: this.message,
+      details: this.message,
       metadata,
     }
   }
