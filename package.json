@@ -17,6 +17,9 @@
     "packages/*"
   ],
   "dependenciesMeta": {
+    "@grpc/grpc-js@1.5.5": {
+      "unplugged": true
+    },
     "grpc_tools_node_protoc_ts@5.2.2": {
       "unplugged": true
     }
