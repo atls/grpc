@@ -15,7 +15,7 @@
     "postpack": "rm -rf dist"
   },
   "dependencies": {
-    "@grpc/grpc-js": "1.5.5",
+    "@grpc/grpc-js": "1.8.8",
     "google-protobuf": "^3.17.3"
   },
   "devDependencies": {
