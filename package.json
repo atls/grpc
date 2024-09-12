@@ -1,20 +1,15 @@
 {
-  "name": "template",
+  "name": "grpc",
   "license": "BSD 3-Clause",
+  "type": "module",
   "private": true,
   "devDependencies": {
-    "@atls/config-jest": "^0.0.3",
-    "@atls/schematics": "^0.0.8",
-    "@jest/core": "^27.4.7",
-    "@types/eslint": "^8.4.1",
-    "@types/jest": "^27.4.0",
+    "@atls/code-runtime": "1.1.0",
     "@types/node": "^17.0.12",
-    "eslint": "^8.7.0",
-    "husky": "^7.0.4",
-    "typescript": "^4.5.5"
+    "typescript": "5.4.2"
   },
   "workspaces": [
-    "packages/*"
+    "packages/**/*"
   ],
   "dependenciesMeta": {
     "@grpc/grpc-js@1.5.5": {
@@ -24,13 +19,5 @@
       "unplugged": true
     }
   },
-  "packageManager": "yarn@3.1.1",
-  "tools": {
-    "schematic": {
-      "collection": "@atls/schematics",
-      "schematic": "project",
-      "type": "libraries",
-      "migration": "1645183271690"
-    }
-  }
+  "packageManager": "yarn@4.0.0"
 }
