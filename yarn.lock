@@ -99,10 +99,10 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@atls/grpc-error-status@workspace:packages/grpc-error-status"
   dependencies:
-    "@grpc/grpc-js": "npm:1.5.5"
+    "@grpc/grpc-js": "npm:1.12.2"
     "@types/google-protobuf": "npm:3.15.12"
-    google-protobuf: "npm:^3.17.3"
-    grpc_tools_node_protoc_ts: "npm:^5.3.0"
+    google-protobuf: "npm:3.21.4"
+    grpc_tools_node_protoc_ts: "npm:5.3.3"
   languageName: unknown
   linkType: soft
 
@@ -562,28 +562,27 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@grpc/grpc-js@npm:1.5.5":
-  version: 1.5.5
-  resolution: "@grpc/grpc-js@npm:1.5.5"
+"@grpc/grpc-js@npm:1.12.2":
+  version: 1.12.2
+  resolution: "@grpc/grpc-js@npm:1.12.2"
   dependencies:
-    "@grpc/proto-loader": "npm:^0.6.4"
-    "@types/node": "npm:>=12.12.47"
-  checksum: 10/7431d1877f19da622cfcdb5894c6039dc4219849b8894bba64e835b3dda7fea273add87006685710447c28886df4291a5003443b5f108f342ed603ac4bd59f8c
+    "@grpc/proto-loader": "npm:^0.7.13"
+    "@js-sdsl/ordered-map": "npm:^4.4.2"
+  checksum: 10/0d0556da8515704b5e722b86097e04693d8c71ba286a076270a96e1ac3a4950e87559c718cc2875d3fcaa6cb8e07d0cc6b1db2673b8940829dfe8b75197844dd
   languageName: node
   linkType: hard
 
-"@grpc/proto-loader@npm:^0.6.4":
-  version: 0.6.9
-  resolution: "@grpc/proto-loader@npm:0.6.9"
+"@grpc/proto-loader@npm:^0.7.13":
+  version: 0.7.13
+  resolution: "@grpc/proto-loader@npm:0.7.13"
   dependencies:
-    "@types/long": "npm:^4.0.1"
     lodash.camelcase: "npm:^4.3.0"
-    long: "npm:^4.0.0"
-    protobufjs: "npm:^6.10.0"
-    yargs: "npm:^16.2.0"
+    long: "npm:^5.0.0"
+    protobufjs: "npm:^7.2.5"
+    yargs: "npm:^17.7.2"
   bin:
     proto-loader-gen-types: build/bin/proto-loader-gen-types.js
-  checksum: 10/1abae34be393dff3f910cdec3e87c0341c9d3efae2cf25456f4b21a60a1423febc9df0875038b4c3bedfb2f3790f632d8f2ecfb8d5ac6c0de10b64cf4865144b
+  checksum: 10/7e2d842c2061cbaf6450c71da0077263be3bab165454d5c8a3e1ae4d3c6d2915f02fd27da63ff01f05e127b1221acd40705273f5d29303901e60514e852992f4
   languageName: node
   linkType: hard
 
@@ -920,6 +919,13 @@ __metadata:
     "@jridgewell/resolve-uri": "npm:^3.1.0"
     "@jridgewell/sourcemap-codec": "npm:^1.4.14"
   checksum: 10/dced32160a44b49d531b80a4a2159dceab6b3ddf0c8e95a0deae4b0e894b172defa63d5ac52a19c2068e1fe7d31ea4ba931fbeec103233ecb4208953967120fc
+  languageName: node
+  linkType: hard
+
+"@js-sdsl/ordered-map@npm:^4.4.2":
+  version: 4.4.2
+  resolution: "@js-sdsl/ordered-map@npm:4.4.2"
+  checksum: 10/ac64e3f0615ecc015461c9f527f124d2edaa9e68de153c1e270c627e01e83d046522d7e872692fd57a8c514578b539afceff75831c0d8b2a9a7a347fbed35af4
   languageName: node
   linkType: hard
 
@@ -1476,14 +1482,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/long@npm:^4.0.1":
-  version: 4.0.1
-  resolution: "@types/long@npm:4.0.1"
-  checksum: 10/6eed014270e35eda86f56c9156222cb09945b6e31e0e47e0e5d186a72fa199cb6a55e89aa7c9b44d83f189eb8f4b6b153a0b717f92b2a93e291b79b130ded76b
-  languageName: node
-  linkType: hard
-
-"@types/node@npm:*, @types/node@npm:>=12.12.47, @types/node@npm:>=13.7.0, @types/node@npm:^17.0.12":
+"@types/node@npm:*, @types/node@npm:>=13.7.0, @types/node@npm:^17.0.12":
   version: 17.0.18
   resolution: "@types/node@npm:17.0.18"
   checksum: 10/a271f0def41adab05581485a7f04e87e31b91a32b26090c3614a43c20c4606fca0098948cbab56cc8d7251a154f12f9b57c0c74a8075c6c76f8d9f0b12af10c9
@@ -2424,14 +2423,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"cliui@npm:^7.0.2":
-  version: 7.0.4
-  resolution: "cliui@npm:7.0.4"
+"cliui@npm:^8.0.1":
+  version: 8.0.1
+  resolution: "cliui@npm:8.0.1"
   dependencies:
     string-width: "npm:^4.2.0"
-    strip-ansi: "npm:^6.0.0"
+    strip-ansi: "npm:^6.0.1"
     wrap-ansi: "npm:^7.0.0"
-  checksum: 10/db858c49af9d59a32d603987e6fddaca2ce716cd4602ba5a2bb3a5af1351eebe82aba8dff3ef3e1b331f7fa9d40ca66e67bdf8e7c327ce0ea959747ead65c0ef
+  checksum: 10/eaa5561aeb3135c2cddf7a3b3f562fc4238ff3b3fc666869ef2adf264be0f372136702f16add9299087fb1907c2e4ec5dbfe83bd24bce815c70a80c6c1a2e950
   languageName: node
   linkType: hard
 
@@ -3738,10 +3737,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"google-protobuf@npm:^3.17.3":
-  version: 3.17.3
-  resolution: "google-protobuf@npm:3.17.3"
-  checksum: 10/d82921ee37539645425703cfc4279f32715e7f49dde6486c856106b0861444c3081537410d6ee07ffdfee3954df3a0bf9707f8cb08b61f3a0e6cce4a6884356e
+"google-protobuf@npm:3.21.4":
+  version: 3.21.4
+  resolution: "google-protobuf@npm:3.21.4"
+  checksum: 10/0d87fe8ef221d105cbaa808f4024bd577638524d8e461469e3733f2e4933391ad4da86b7fcbd11e8781bee04eacf2e8ba19aaacd5f9deb336a220485841d980f
   languageName: node
   linkType: hard
 
@@ -3783,15 +3782,15 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"grpc_tools_node_protoc_ts@npm:^5.3.0":
-  version: 5.3.0
-  resolution: "grpc_tools_node_protoc_ts@npm:5.3.0"
+"grpc_tools_node_protoc_ts@npm:5.3.3":
+  version: 5.3.3
+  resolution: "grpc_tools_node_protoc_ts@npm:5.3.3"
   dependencies:
     google-protobuf: "npm:3.15.8"
     handlebars: "npm:4.7.7"
   bin:
     protoc-gen-ts: bin/protoc-gen-ts
-  checksum: 10/273275e0aca9d4fb07eb262c01fa47116a2592b5e4a0d2fd60694f5488ac36a03ec44515e0504fa93b1b2ebe04a73194a37416e8409d9a30ebb64533f8b3a55c
+  checksum: 10/96fe57b04a7d9e7e656678fab14dd4fc8027849abbb487a7eae4d2841651aa9a481402d5b9df34b4ac3bac6f190551db2e647127d6f6736d5f89ea2fa791ff33
   languageName: node
   linkType: hard
 
@@ -5005,10 +5004,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"long@npm:^4.0.0":
-  version: 4.0.0
-  resolution: "long@npm:4.0.0"
-  checksum: 10/8296e2ba7bab30f9cfabb81ebccff89c819af6a7a78b4bb5a70ea411aa764ee0532f7441381549dfa6a1a98d72abe9138bfcf99f4fa41238629849bc035b845b
+"long@npm:^5.0.0":
+  version: 5.2.3
+  resolution: "long@npm:5.2.3"
+  checksum: 10/9167ec6947a825b827c30da169a7384eec6c0c9ec2f0b9c74da2e93d81159bbe39fb09c3f13dae9721d4b807ccfa09797a7dd1012f5d478e3e33ca3c78b608e6
   languageName: node
   linkType: hard
 
@@ -5701,9 +5700,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"protobufjs@npm:^6.10.0":
-  version: 6.11.2
-  resolution: "protobufjs@npm:6.11.2"
+"protobufjs@npm:^7.2.5":
+  version: 7.4.0
+  resolution: "protobufjs@npm:7.4.0"
   dependencies:
     "@protobufjs/aspromise": "npm:^1.1.2"
     "@protobufjs/base64": "npm:^1.1.2"
@@ -5715,13 +5714,9 @@ __metadata:
     "@protobufjs/path": "npm:^1.1.2"
     "@protobufjs/pool": "npm:^1.1.0"
     "@protobufjs/utf8": "npm:^1.1.0"
-    "@types/long": "npm:^4.0.1"
     "@types/node": "npm:>=13.7.0"
-    long: "npm:^4.0.0"
-  bin:
-    pbjs: bin/pbjs
-    pbts: bin/pbts
-  checksum: 10/86c35e561a44251137f167a1fd3225072c7325aa72e483d8530372770a6ba2d8ab07339c1d9f33e304253702914a7625c3dd96fe852d2238f6eb8851ea46e1cf
+    long: "npm:^5.0.0"
+  checksum: 10/408423506610f70858d7593632f4a6aa4f05796c90fd632be9b9252457c795acc71aa6d3b54bb7f48a890141728fee4ca3906723ccea6c202ad71f21b3879b8b
   languageName: node
   linkType: hard
 
@@ -6269,7 +6264,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"string-width@npm:^4.1.0, string-width@npm:^4.2.0":
+"string-width@npm:^4.1.0, string-width@npm:^4.2.0, string-width@npm:^4.2.3":
   version: 4.2.3
   resolution: "string-width@npm:4.2.3"
   dependencies:
@@ -7012,25 +7007,25 @@ __metadata:
   languageName: node
   linkType: hard
 
-"yargs-parser@npm:^20.2.2":
-  version: 20.2.9
-  resolution: "yargs-parser@npm:20.2.9"
-  checksum: 10/0188f430a0f496551d09df6719a9132a3469e47fe2747208b1dd0ab2bb0c512a95d0b081628bbca5400fb20dbf2fabe63d22badb346cecadffdd948b049f3fcc
+"yargs-parser@npm:^21.1.1":
+  version: 21.1.1
+  resolution: "yargs-parser@npm:21.1.1"
+  checksum: 10/9dc2c217ea3bf8d858041252d43e074f7166b53f3d010a8c711275e09cd3d62a002969a39858b92bbda2a6a63a585c7127014534a560b9c69ed2d923d113406e
   languageName: node
   linkType: hard
 
-"yargs@npm:^16.2.0":
-  version: 16.2.0
-  resolution: "yargs@npm:16.2.0"
+"yargs@npm:^17.7.2":
+  version: 17.7.2
+  resolution: "yargs@npm:17.7.2"
   dependencies:
-    cliui: "npm:^7.0.2"
+    cliui: "npm:^8.0.1"
     escalade: "npm:^3.1.1"
     get-caller-file: "npm:^2.0.5"
     require-directory: "npm:^2.1.1"
-    string-width: "npm:^4.2.0"
+    string-width: "npm:^4.2.3"
     y18n: "npm:^5.0.5"
-    yargs-parser: "npm:^20.2.2"
-  checksum: 10/807fa21211d2117135d557f95fcd3c3d390530cda2eca0c840f1d95f0f40209dcfeb5ec18c785a1f3425896e623e3b2681e8bb7b6600060eda1c3f4804e7957e
+    yargs-parser: "npm:^21.1.1"
+  checksum: 10/abb3e37678d6e38ea85485ed86ebe0d1e3464c640d7d9069805ea0da12f69d5a32df8e5625e370f9c96dd1c2dc088ab2d0a4dd32af18222ef3c4224a19471576
   languageName: node
   linkType: hard
 
