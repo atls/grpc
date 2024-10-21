@@ -164,6 +164,7 @@ const RAW_RUNTIME_STATE =
         "packageDependencies": [\
           ["@atls/grpc-error-status", "workspace:packages/grpc-error-status"],\
           ["@grpc/grpc-js", "npm:1.5.5"],\
+          ["@types/google-protobuf", "npm:3.15.12"],\
           ["google-protobuf", "npm:3.17.3"],\
           ["grpc_tools_node_protoc_ts", "npm:5.3.0"]\
         ],\
@@ -2124,6 +2125,15 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "../.yarn/berry/cache/@types-estree-npm-1.0.5-5b7faed3b4-10.zip/node_modules/@types/estree/",\
         "packageDependencies": [\
           ["@types/estree", "npm:1.0.5"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["@types/google-protobuf", [\
+      ["npm:3.15.12", {\
+        "packageLocation": "../.yarn/berry/cache/@types-google-protobuf-npm-3.15.12-fa91faceb9-10.zip/node_modules/@types/google-protobuf/",\
+        "packageDependencies": [\
+          ["@types/google-protobuf", "npm:3.15.12"]\
         ],\
         "linkType": "HARD"\
       }]\

@@ -1,6 +1,7 @@
+import type { ServiceError }             from '@grpc/grpc-js'
+import type { Message }                  from 'google-protobuf'
+
 import { Metadata }                      from '@grpc/grpc-js'
-import { ServiceError }                  from '@grpc/grpc-js'
-import { Message }                       from 'google-protobuf'
 import { Any }                           from 'google-protobuf/google/protobuf/any_pb'
 
 import { Code }                          from '../proto/google/rpc/code_pb'
@@ -27,18 +28,6 @@ export class ErrorStatus<T extends Message> {
     this.status.setMessage(message)
   }
 
-  toServiceError(metadata: Metadata = new Metadata()): ServiceError {
-    metadata.add(GRPC_ERROR_DETAILS_KEY, Buffer.from(this.status.serializeBinary()))
-
-    return {
-      name: 'ServiceError',
-      code: this.code,
-      message: this.message,
-      details: this.message,
-      metadata,
-    }
-  }
-
   static fromServiceError<TMap extends Record<string, (bytes: Uint8Array) => any>>(
     error: ServiceError,
     deserializeMap: TMap = {} as TMap
@@ -53,7 +42,7 @@ export class ErrorStatus<T extends Message> {
     if (buffer && typeof buffer !== 'string') {
       const details = Status.deserializeBinary(buffer)
         .getDetailsList()
-        .reduce((result, detail) => {
+        .reduce<Array<{ '@type': string; detail: any }>>((result, detail) => {
           const typeName = detail.getTypeName()
           const deserialize = getGoogleDeserializeBinary(typeName) || deserializeMap[typeName]
 
@@ -77,18 +66,24 @@ export class ErrorStatus<T extends Message> {
     return errorStatus
   }
 
-  private addUnpackedDetails(details: Array<{ '@type': string; detail: T }>) {
-    this.details.push(...details)
+  toServiceError(metadata: Metadata = new Metadata()): ServiceError {
+    metadata.add(GRPC_ERROR_DETAILS_KEY, Buffer.from(this.status.serializeBinary()))
 
-    return this
+    return {
+      name: 'ServiceError',
+      code: this.code,
+      message: this.message,
+      details: this.message,
+      metadata,
+    }
   }
 
-  addDetail(detail: T, typeName?: string, typeNamePrefix?: string) {
+  addDetail(detail: T, typeName?: string, typeNamePrefix?: string): this {
     const anyPb = new Any()
 
     anyPb.pack(
       detail.serializeBinary(),
-      typeName || getGoogleErrorDetailsTypeName(detail),
+      typeName || getGoogleErrorDetailsTypeName(detail) || 'unknown',
       typeNamePrefix
     )
 
@@ -102,8 +97,15 @@ export class ErrorStatus<T extends Message> {
     return this
   }
 
-  toObject() {
-    const [status] = Object.entries(Code).find((entry) => entry[1] === this.code) || ['UNKNOWN']
+  toObject(): {
+    status: string
+    code: number
+    message: string
+    details: Array<Record<string, any>>
+  } {
+    const [status] = Object.entries(Code).find((entry) => entry[1] === (this.code as Code)) || [
+      'UNKNOWN',
+    ]
 
     return {
       status,
@@ -122,5 +124,11 @@ export class ErrorStatus<T extends Message> {
         return data
       }),
     }
+  }
+
+  private addUnpackedDetails(details: Array<{ '@type': string; detail: T }>): this {
+    this.details.push(...details)
+
+    return this
   }
 }
