@@ -1,16 +1,16 @@
 {
   "name": "grpc",
+  "private": true,
   "license": "BSD 3-Clause",
   "type": "module",
-  "private": true,
+  "workspaces": [
+    "packages/**/*"
+  ],
   "devDependencies": {
     "@atls/code-runtime": "1.1.0",
     "@types/node": "^17.0.12",
     "typescript": "5.4.2"
   },
-  "workspaces": [
-    "packages/**/*"
-  ],
   "dependenciesMeta": {
     "@grpc/grpc-js@1.5.5": {
       "unplugged": true

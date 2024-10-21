@@ -1,10 +1,10 @@
-import { Any }                           from 'google-protobuf/google/protobuf/any_pb'
-import { Message }                       from 'google-protobuf'
 import { Metadata }                      from '@grpc/grpc-js'
 import { ServiceError }                  from '@grpc/grpc-js'
+import { Message }                       from 'google-protobuf'
+import { Any }                           from 'google-protobuf/google/protobuf/any_pb'
 
-import { Status }                        from '../proto/google/rpc/status_pb'
 import { Code }                          from '../proto/google/rpc/code_pb'
+import { Status }                        from '../proto/google/rpc/status_pb'
 import { GRPC_ERROR_DETAILS_KEY }        from './error-status.constants'
 import { getGoogleErrorDetailsTypeName } from './google.rpc'
 import { getGoogleDeserializeBinary }    from './google.rpc'

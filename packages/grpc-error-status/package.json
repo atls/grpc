@@ -8,11 +8,11 @@
     "dist"
   ],
   "scripts": {
-    "proto:generate": "PATH=$PATH:$(yarn bin protoc-gen-ts) buf generate",
-    "proto:lint": "buf lint",
     "build": "yarn library build",
     "prepack": "yarn run build",
-    "postpack": "rm -rf dist"
+    "postpack": "rm -rf dist",
+    "proto:generate": "PATH=$PATH:$(yarn bin protoc-gen-ts) buf generate",
+    "proto:lint": "buf lint"
   },
   "dependencies": {
     "@grpc/grpc-js": "1.5.5",
