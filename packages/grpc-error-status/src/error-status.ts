@@ -2,14 +2,17 @@ import type { ServiceError }             from '@grpc/grpc-js'
 import type { Message }                  from 'google-protobuf'
 
 import { Metadata }                      from '@grpc/grpc-js'
-import { Any }                           from 'google-protobuf/google/protobuf/any_pb'
+import { createRequire }                 from 'module'
 
-import { Code }                          from '../proto/google/rpc/code_pb'
-import { Status }                        from '../proto/google/rpc/status_pb'
-import { GRPC_ERROR_DETAILS_KEY }        from './error-status.constants'
-import { getGoogleErrorDetailsTypeName } from './google.rpc'
-import { getGoogleDeserializeBinary }    from './google.rpc'
-import { isObject }                      from './utils'
+import { Code }                          from '../proto/google/rpc/code_pb.js'
+import { Status }                        from '../proto/google/rpc/status_pb.js'
+import { GRPC_ERROR_DETAILS_KEY }        from './error-status.constants.js'
+import { getGoogleErrorDetailsTypeName } from './google.rpc.js'
+import { getGoogleDeserializeBinary }    from './google.rpc.js'
+import { isObject }                      from './utils.js'
+
+const createdRequire = createRequire(import.meta.url)
+const { Any } = createdRequire('google-protobuf/google/protobuf/any_pb')
 
 export class ErrorStatus<T extends Message> {
   private status: Status
@@ -43,14 +46,17 @@ export class ErrorStatus<T extends Message> {
       const details = Status.deserializeBinary(buffer)
         .getDetailsList()
         .reduce<Array<{ '@type': string; detail: any }>>((result, detail) => {
-          const typeName = detail.getTypeName()
+          // eslint-disable-next-line @typescript-eslint/no-unsafe-call
+          const typeName = detail.getTypeName() as string
           const deserialize = getGoogleDeserializeBinary(typeName) || deserializeMap[typeName]
 
           if (deserialize) {
+            // eslint-disable-next-line @typescript-eslint/no-unsafe-call
             const message = detail.unpack(deserialize, typeName)
 
             if (message) {
               result.push({
+                // eslint-disable-next-line @typescript-eslint/no-unsafe-call
                 '@type': detail.getTypeUrl(),
                 detail: message,
               })
@@ -79,8 +85,10 @@ export class ErrorStatus<T extends Message> {
   }
 
   addDetail(detail: T, typeName?: string, typeNamePrefix?: string): this {
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-call
     const anyPb = new Any()
 
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-call
     anyPb.pack(
       detail.serializeBinary(),
       typeName || getGoogleErrorDetailsTypeName(detail) || 'unknown',
@@ -90,6 +98,7 @@ export class ErrorStatus<T extends Message> {
     this.status.addDetails(anyPb)
 
     this.details.push({
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-call
       '@type': anyPb.getTypeUrl(),
       detail,
     })

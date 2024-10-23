@@ -1,4 +1,4 @@
-import errorDetails from '../proto/google/rpc/error_details_pb'
+import * as errorDetails from '../proto/google/rpc/error_details_pb.js'
 
 const deserializeKeys = [
   'RetryInfo',
