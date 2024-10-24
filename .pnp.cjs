@@ -1033,8 +1033,7 @@ const RAW_RUNTIME_STATE =
         "packageDependencies": [\
           ["@grpc/grpc-js", "npm:1.12.2"],\
           ["@grpc/proto-loader", "npm:0.7.13"],\
-          ["@js-sdsl/ordered-map", "npm:4.4.2"],\
-          ["long", "npm:5.2.0"]\
+          ["@js-sdsl/ordered-map", "npm:4.4.2"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -6450,13 +6449,6 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["long", [\
-      ["npm:5.2.0", {\
-        "packageLocation": "../.yarn/berry/cache/long-npm-5.2.0-bbbd23a9e6-10.zip/node_modules/long/",\
-        "packageDependencies": [\
-          ["long", "npm:5.2.0"]\
-        ],\
-        "linkType": "HARD"\
-      }],\
       ["npm:5.2.3", {\
         "packageLocation": "../.yarn/berry/cache/long-npm-5.2.3-61dddb7586-10.zip/node_modules/long/",\
         "packageDependencies": [\
