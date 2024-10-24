@@ -99,6 +99,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@atls/grpc-error-status@workspace:packages/grpc-error-status"
   dependencies:
+    "@bufbuild/buf": "npm:1.45.0"
     "@grpc/grpc-js": "npm:1.12.2"
     "@types/google-protobuf": "npm:3.15.12"
     google-protobuf: "npm:3.21.4"
@@ -479,6 +480,79 @@ __metadata:
   version: 0.2.3
   resolution: "@bcoe/v8-coverage@npm:0.2.3"
   checksum: 10/1a1f0e356a3bb30b5f1ced6f79c413e6ebacf130421f15fac5fcd8be5ddf98aedb4404d7f5624e3285b700e041f9ef938321f3ca4d359d5b716f96afa120d88d
+  languageName: node
+  linkType: hard
+
+"@bufbuild/buf-darwin-arm64@npm:1.45.0":
+  version: 1.45.0
+  resolution: "@bufbuild/buf-darwin-arm64@npm:1.45.0"
+  conditions: os=darwin & cpu=arm64
+  languageName: node
+  linkType: hard
+
+"@bufbuild/buf-darwin-x64@npm:1.45.0":
+  version: 1.45.0
+  resolution: "@bufbuild/buf-darwin-x64@npm:1.45.0"
+  conditions: os=darwin & cpu=x64
+  languageName: node
+  linkType: hard
+
+"@bufbuild/buf-linux-aarch64@npm:1.45.0":
+  version: 1.45.0
+  resolution: "@bufbuild/buf-linux-aarch64@npm:1.45.0"
+  conditions: os=linux & cpu=arm64
+  languageName: node
+  linkType: hard
+
+"@bufbuild/buf-linux-x64@npm:1.45.0":
+  version: 1.45.0
+  resolution: "@bufbuild/buf-linux-x64@npm:1.45.0"
+  conditions: os=linux & cpu=x64
+  languageName: node
+  linkType: hard
+
+"@bufbuild/buf-win32-arm64@npm:1.45.0":
+  version: 1.45.0
+  resolution: "@bufbuild/buf-win32-arm64@npm:1.45.0"
+  conditions: os=win32 & cpu=arm64
+  languageName: node
+  linkType: hard
+
+"@bufbuild/buf-win32-x64@npm:1.45.0":
+  version: 1.45.0
+  resolution: "@bufbuild/buf-win32-x64@npm:1.45.0"
+  conditions: os=win32 & cpu=x64
+  languageName: node
+  linkType: hard
+
+"@bufbuild/buf@npm:1.45.0":
+  version: 1.45.0
+  resolution: "@bufbuild/buf@npm:1.45.0"
+  dependencies:
+    "@bufbuild/buf-darwin-arm64": "npm:1.45.0"
+    "@bufbuild/buf-darwin-x64": "npm:1.45.0"
+    "@bufbuild/buf-linux-aarch64": "npm:1.45.0"
+    "@bufbuild/buf-linux-x64": "npm:1.45.0"
+    "@bufbuild/buf-win32-arm64": "npm:1.45.0"
+    "@bufbuild/buf-win32-x64": "npm:1.45.0"
+  dependenciesMeta:
+    "@bufbuild/buf-darwin-arm64":
+      optional: true
+    "@bufbuild/buf-darwin-x64":
+      optional: true
+    "@bufbuild/buf-linux-aarch64":
+      optional: true
+    "@bufbuild/buf-linux-x64":
+      optional: true
+    "@bufbuild/buf-win32-arm64":
+      optional: true
+    "@bufbuild/buf-win32-x64":
+      optional: true
+  bin:
+    buf: bin/buf
+    protoc-gen-buf-breaking: bin/protoc-gen-buf-breaking
+    protoc-gen-buf-lint: bin/protoc-gen-buf-lint
+  checksum: 10/1c6acfbf6834d7bc7ef8ad98807d39695d8f2416c859842dda22d8fd8e0b7c5907d8bd41443e287919c60413309203f288aeb3443c1ebf08cfcbf772e5113720
   languageName: node
   linkType: hard
 

@@ -163,6 +163,7 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "./packages/grpc-error-status/",\
         "packageDependencies": [\
           ["@atls/grpc-error-status", "workspace:packages/grpc-error-status"],\
+          ["@bufbuild/buf", "npm:1.45.0"],\
           ["@grpc/grpc-js", "npm:1.12.2"],\
           ["@types/google-protobuf", "npm:3.15.12"],\
           ["google-protobuf", "npm:3.21.4"],\
@@ -915,6 +916,75 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "../.yarn/berry/cache/@bcoe-v8-coverage-npm-0.2.3-9e27b3c57e-10.zip/node_modules/@bcoe/v8-coverage/",\
         "packageDependencies": [\
           ["@bcoe/v8-coverage", "npm:0.2.3"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["@bufbuild/buf", [\
+      ["npm:1.45.0", {\
+        "packageLocation": "./.yarn/unplugged/@bufbuild-buf-npm-1.45.0-35dc388fd8/node_modules/@bufbuild/buf/",\
+        "packageDependencies": [\
+          ["@bufbuild/buf", "npm:1.45.0"],\
+          ["@bufbuild/buf-darwin-arm64", "npm:1.45.0"],\
+          ["@bufbuild/buf-darwin-x64", "npm:1.45.0"],\
+          ["@bufbuild/buf-linux-aarch64", "npm:1.45.0"],\
+          ["@bufbuild/buf-linux-x64", "npm:1.45.0"],\
+          ["@bufbuild/buf-win32-arm64", "npm:1.45.0"],\
+          ["@bufbuild/buf-win32-x64", "npm:1.45.0"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["@bufbuild/buf-darwin-arm64", [\
+      ["npm:1.45.0", {\
+        "packageLocation": "./.yarn/unplugged/@bufbuild-buf-darwin-arm64-npm-1.45.0-64297b5406/node_modules/@bufbuild/buf-darwin-arm64/",\
+        "packageDependencies": [\
+          ["@bufbuild/buf-darwin-arm64", "npm:1.45.0"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["@bufbuild/buf-darwin-x64", [\
+      ["npm:1.45.0", {\
+        "packageLocation": "./.yarn/unplugged/@bufbuild-buf-darwin-x64-npm-1.45.0-858229f16b/node_modules/@bufbuild/buf-darwin-x64/",\
+        "packageDependencies": [\
+          ["@bufbuild/buf-darwin-x64", "npm:1.45.0"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["@bufbuild/buf-linux-aarch64", [\
+      ["npm:1.45.0", {\
+        "packageLocation": "./.yarn/unplugged/@bufbuild-buf-linux-aarch64-npm-1.45.0-8e1eabf0e5/node_modules/@bufbuild/buf-linux-aarch64/",\
+        "packageDependencies": [\
+          ["@bufbuild/buf-linux-aarch64", "npm:1.45.0"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["@bufbuild/buf-linux-x64", [\
+      ["npm:1.45.0", {\
+        "packageLocation": "./.yarn/unplugged/@bufbuild-buf-linux-x64-npm-1.45.0-6b40f36da2/node_modules/@bufbuild/buf-linux-x64/",\
+        "packageDependencies": [\
+          ["@bufbuild/buf-linux-x64", "npm:1.45.0"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["@bufbuild/buf-win32-arm64", [\
+      ["npm:1.45.0", {\
+        "packageLocation": "./.yarn/unplugged/@bufbuild-buf-win32-arm64-npm-1.45.0-f3283e5c22/node_modules/@bufbuild/buf-win32-arm64/",\
+        "packageDependencies": [\
+          ["@bufbuild/buf-win32-arm64", "npm:1.45.0"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["@bufbuild/buf-win32-x64", [\
+      ["npm:1.45.0", {\
+        "packageLocation": "./.yarn/unplugged/@bufbuild-buf-win32-x64-npm-1.45.0-f9fd039046/node_modules/@bufbuild/buf-win32-x64/",\
+        "packageDependencies": [\
+          ["@bufbuild/buf-win32-x64", "npm:1.45.0"]\
         ],\
         "linkType": "HARD"\
       }]\

@@ -12,7 +12,7 @@
     "build": "yarn library build",
     "prepack": "yarn run build",
     "postpack": "rm -rf dist",
-    "proto:generate": "PATH=$PATH:$(yarn bin protoc-gen-ts) buf generate",
+    "proto:generate": "buf generate --template buf.gen.yaml",
     "proto:lint": "buf lint"
   },
   "dependencies": {
@@ -20,6 +20,7 @@
     "google-protobuf": "3.21.4"
   },
   "devDependencies": {
+    "@bufbuild/buf": "1.45.0",
     "@types/google-protobuf": "3.15.12",
     "grpc_tools_node_protoc_ts": "5.3.3"
   },
