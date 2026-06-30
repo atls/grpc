@@ -4,7 +4,8 @@
   "license": "BSD 3-Clause",
   "type": "module",
   "workspaces": [
-    "packages/**/*"
+    "packages/**/*",
+    "!packages/**/proto"
   ],
   "devDependencies": {
     "@atls/raijin": "0.5.2",
