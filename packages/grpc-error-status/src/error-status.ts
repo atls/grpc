@@ -1,32 +1,19 @@
 import type { ServiceError }             from '@grpc/grpc-js'
 import type { Message }                  from 'google-protobuf'
 
-import type * as CodeProto               from '../proto/google/rpc/code_pb.js'
-import type * as StatusProto             from '../proto/google/rpc/status_pb.js'
-import type { DeserializeBinary }        from './google.rpc.js'
-
-import { createRequire }                 from 'node:module'
+import type { ErrorStatusObject }        from './error-status.interfaces.js'
+import type { ErrorStatusStoredDetail }  from './error-status.interfaces.js'
+import type { DeserializeBinary }        from './google.rpc.interfaces.js'
 
 import { Metadata }                      from '@grpc/grpc-js'
 
 import { GRPC_ERROR_DETAILS_KEY }        from './error-status.constants.js'
+import { Any }                           from './proto.js'
+import { Code }                          from './proto.js'
+import { Status }                        from './proto.js'
 import { getGoogleErrorDetailsTypeName } from './google.rpc.js'
 import { getErrorStatusDetails }         from './status-details.js'
 import { isObject }                      from './utils.js'
-
-const createdRequire = createRequire(import.meta.url)
-
-type GoogleRpcAny = NonNullable<
-  Parameters<InstanceType<typeof StatusProto.Status>['addDetails']>[0]
->
-
-type GoogleRpcAnyConstructor = new () => GoogleRpcAny
-
-const { Any } = createdRequire('google-protobuf/google/protobuf/any_pb') as {
-  Any: GoogleRpcAnyConstructor
-}
-const { Code } = createdRequire('../proto/google/rpc/code_pb.js') as typeof CodeProto
-const { Status } = createdRequire('../proto/google/rpc/status_pb.js') as typeof StatusProto
 
 export class ErrorStatus<T extends Message> {
   private status: InstanceType<typeof Status>
@@ -35,7 +22,7 @@ export class ErrorStatus<T extends Message> {
 
   private message: string
 
-  private details: Array<{ '@type': string; detail: T }> = []
+  private details: Array<ErrorStatusStoredDetail<T>> = []
 
   constructor(code: number, message: string) {
     this.code = code
@@ -90,12 +77,7 @@ export class ErrorStatus<T extends Message> {
     return this
   }
 
-  toObject(): {
-    status: keyof typeof Code | 'UNKNOWN'
-    code: number
-    message: string
-    details: Array<unknown>
-  } {
+  toObject(): ErrorStatusObject {
     const [status] = Object.entries(Code).find(
       (entry) => String(entry[1]) === String(this.code)
     ) || ['UNKNOWN']
@@ -119,7 +101,7 @@ export class ErrorStatus<T extends Message> {
     }
   }
 
-  private addUnpackedDetails(details: Array<{ '@type': string; detail: T }>): this {
+  private addUnpackedDetails(details: Array<ErrorStatusStoredDetail<T>>): this {
     this.details.push(...details)
 
     return this
