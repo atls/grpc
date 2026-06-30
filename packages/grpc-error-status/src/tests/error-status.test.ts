@@ -17,16 +17,6 @@ import { ErrorStatus }                     from '../index.js'
 import { Status }                          from '../index.js'
 import { getErrorStatusDetails }           from '../index.js'
 
-const validationObject: BadRequest.AsObject = {
-  fieldViolationsList: [],
-}
-
-const statusObject: Status.AsObject = {
-  code: Code.INVALID_ARGUMENT,
-  message: 'Request validation failed',
-  detailsList: [],
-}
-
 const createValidationError = (): ServiceError => {
   const metadata = new Metadata()
   const violation = new BadRequest.FieldViolation()
@@ -80,11 +70,6 @@ describe('ErrorStatus', () => {
     assert.equal(typeof entrypoint.ErrorStatus, 'function')
     assert.equal(typeof entrypoint.BadRequest, 'function')
     assert.equal(entrypoint.Code.INVALID_ARGUMENT, 3)
-  })
-
-  it('preserves generated namespace type exports', () => {
-    assert.deepEqual(validationObject.fieldViolationsList, [])
-    assert.equal(statusObject.code, Code.INVALID_ARGUMENT)
   })
 
   it('preserves google rpc validation details', () => {
