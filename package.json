@@ -31,6 +31,5 @@
   "packageManager": "yarn@4.18.0",
   "linterIgnorePatterns": [
     "**/*/proto/**/*.js"
-  ],
-  "typecheckSkipLibCheck": true
+  ]
 }
