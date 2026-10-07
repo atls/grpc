@@ -1,3 +1,0 @@
-# Retry publication after the workspace publisher was installed.
-releases:
-  "@atls/grpc-error-status": patch
