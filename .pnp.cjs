@@ -35,8 +35,7 @@ const RAW_RUNTIME_STATE =
         "packageDependencies": [\
           ["@atls/raijin", "npm:1.1.1"],\
           ["@types/node", "npm:22.20.0"],\
-          ["grpc", "workspace:."],\
-          ["typescript", "patch:typescript@npm%3A5.5.4#optional!builtin<compat/typescript>::version=5.5.4&hash=379a07"]\
+          ["grpc", "workspace:."]\
         ],\
         "linkType": "SOFT"\
       }]\
@@ -4104,8 +4103,7 @@ const RAW_RUNTIME_STATE =
         "packageDependencies": [\
           ["@atls/raijin", "npm:1.1.1"],\
           ["@types/node", "npm:22.20.0"],\
-          ["grpc", "workspace:."],\
-          ["typescript", "patch:typescript@npm%3A5.5.4#optional!builtin<compat/typescript>::version=5.5.4&hash=379a07"]\
+          ["grpc", "workspace:."]\
         ],\
         "linkType": "SOFT"\
       }]\
@@ -6740,13 +6738,6 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["typescript", [\
-      ["patch:typescript@npm%3A5.5.4#optional!builtin<compat/typescript>::version=5.5.4&hash=379a07", {\
-        "packageLocation": "../.yarn/berry/cache/typescript-patch-fe43cd9db9-10.zip/node_modules/typescript/",\
-        "packageDependencies": [\
-          ["typescript", "patch:typescript@npm%3A5.5.4#optional!builtin<compat/typescript>::version=5.5.4&hash=379a07"]\
-        ],\
-        "linkType": "HARD"\
-      }],\
       ["patch:typescript@npm%3A5.9.3#optional!builtin<compat/typescript>::version=5.9.3&hash=5786d5", {\
         "packageLocation": "../.yarn/berry/cache/typescript-patch-6fda4d02cf-10.zip/node_modules/typescript/",\
         "packageDependencies": [\
